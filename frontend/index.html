@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header" id="header" style="display:none;">
+    <div class="user-info">
+      <span id="welcomeUser"></span>
+      <div class="menu">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="dropdown" id="dropdownMenu">
+          <p onclick="showUpdateMobile()">Change Mobile</p>
+          <p onclick="showUpdatePassword()">Change Password</p>
+          <p onclick="logout()">Logout</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1>Task Manager</h1>
+
+  <!-- Signup -->
+  <div id="signupBox">
+    <h2>Signup</h2>
+    <input type="text" id="signupFirstName" placeholder="First Name">
+    <input type="text" id="signupLastName" placeholder="Last Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="text" id="signupMobile" placeholder="Mobile">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signup()">Signup</button>
+    <p>Already Registered? <span class="link" onclick="showLogin()">Login</span></p>
+  </div>
+
+  <!-- Login -->
+  <div id="loginBox" style="display:none;">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>New User? <span class="link" onclick="showSignup()">Signup</span></p>
+  </div>
+
+  <!-- Task Section -->
+  <div id="taskSection" style="display:none;">
+    <input type="text" id="taskInput" placeholder="Enter Task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+</div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+
+
+</body>
+</html>
